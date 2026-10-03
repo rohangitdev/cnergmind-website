@@ -31,7 +31,7 @@ const SOCIAL_LINKS = {
 
 // ==================== COMPANY INFORMATION ====================
 const COMPANY_INFO = {
-    name: 'CNERG MIND STEEL STRUCTURE PVT. LTD.',
+    name: 'CNERGMIND STEEL STRUCTURE PVT. LTD.',
     tagline: 'Enduring Strength, Creating Landmarks',
     founded: '2000',
     yearsInBusiness: 26,
@@ -86,28 +86,28 @@ const EXPERTISE_AREAS = [
 const TESTIMONIALS = [
     {
         id: 1,
-        text: 'CNERG Mind delivered our warehouse project on time and within budget. Their professionalism and quality are unmatched. Highly recommended!',
+        text: 'CNERGMIND delivered our warehouse project on time and within budget. Their professionalism and quality are unmatched. Highly recommended!',
         author: 'Rajesh Kumar',
         company: 'Warehouse Logistics',
         rating: 5
     },
     {
         id: 2,
-        text: 'Working with CNERG Mind was a smooth experience. Their team provided excellent technical support throughout the project.',
+        text: 'Working with CNERGMIND was a smooth experience. Their team provided excellent technical support throughout the project.',
         author: 'Priya Sharma',
         company: 'Manufacturing Solutions',
         rating: 5
     },
     {
         id: 3,
-        text: 'The PEB solution from CNERG Mind saved us significant time and cost. Their engineering expertise is exceptional.',
+        text: 'The PEB solution from CNERGMIND saved us significant time and cost. Their engineering expertise is exceptional.',
         author: 'Arun Patel',
         company: 'Industrial Developer',
         rating: 5
     },
     {
         id: 4,
-        text: 'Quality structures with great after-sales service. CNERG Mind understands the importance of durability and reliability.',
+        text: 'Quality structures with great after-sales service. CNERGMIND understands the importance of durability and reliability.',
         author: 'Suresh Singh',
         company: 'Construction Firm',
         rating: 4
@@ -269,10 +269,10 @@ const HERO_SLIDES = [
 
 // ==================== GALLERY PROJECTS ====================
 const GALLERY_PROJECTS = [
-    { id: 1, title: 'Industrial Warehouse', category: 'Warehouse', caption: 'Large-scale warehouse project' },
-    { id: 2, title: 'Commercial Complex', category: 'Commercial', caption: 'Multi-purpose commercial building' },
+    { id: 1, title: 'Gharda Chemicals Ltd', category: 'Chemical Manufacturing', caption: 'Industrial PEB Structure - Project Value: ₹1.9 Cr' },
+    { id: 2, title: 'Warehouse Complex', category: 'Logistics', caption: 'Large-scale warehouse facility' },
     { id: 3, title: 'Manufacturing Unit', category: 'Industrial', caption: 'Heavy-duty manufacturing facility' },
-    { id: 4, title: 'Sports Facility', category: 'Sports', caption: 'Large span sports complex' },
+    { id: 4, title: 'Commercial Complex', category: 'Commercial', caption: 'Multi-purpose commercial building' },
     { id: 5, title: 'Logistics Hub', category: 'Logistics', caption: 'High-capacity logistics center' },
     { id: 6, title: 'Storage Building', category: 'Agricultural', caption: 'Agricultural storage facility' }
 ];
