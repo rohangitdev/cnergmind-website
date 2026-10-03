@@ -38,6 +38,11 @@ class AdvancedEnquiryFormHandler {
 
         inputs.forEach(input => {
             input.addEventListener('blur', () => this.validateField(input));
+            input.addEventListener('change', () => {
+                if (input.classList.contains('error')) {
+                    this.validateField(input);
+                }
+            });
             input.addEventListener('input', () => {
                 if (input.classList.contains('error')) {
                     this.validateField(input);
@@ -50,8 +55,13 @@ class AdvancedEnquiryFormHandler {
         let isValid = true;
         let errorMessage = '';
 
-        // Check if empty
-        if (!field.value.trim()) {
+        // Check if empty (checkboxes must be ticked)
+        if (field.type === 'checkbox') {
+            if (!field.checked) {
+                isValid = false;
+                errorMessage = 'Please tick this box so we can contact you';
+            }
+        } else if (!field.value.trim()) {
             isValid = false;
             errorMessage = 'This field is required';
         }
@@ -127,7 +137,7 @@ class AdvancedEnquiryFormHandler {
             await this.submitViaNetlify(formData);
         } catch (error) {
             console.error('Submission failed:', error);
-            this.showMessage('Failed to submit enquiry. Please try again later.', 'error');
+            this.showMessage('Sorry, your enquiry could not be sent. Please try again, or email us at sales@cnergmind.com.', 'error');
             this.resetButton();
         }
     }
@@ -157,17 +167,16 @@ class AdvancedEnquiryFormHandler {
         });
 
         if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error.message || 'Failed to send email');
+            let detail = 'Failed to send email';
+            try {
+                const error = await response.json();
+                detail = error.message || error.error || detail;
+            } catch (_) { /* non-JSON error body */ }
+            throw new Error(detail);
         }
 
-        const result = await response.json();
-
-        this.showMessage('✓ Enquiry submitted successfully! We will contact you within 24 hours.', 'success');
+        this.showMessage('Thank you! Your enquiry has been sent to our sales team. We will get back to you shortly.', 'success');
         this.form.reset();
-
-        // Log submission
-        console.log('Enquiry submitted successfully:', formData);
 
         this.resetButton();
     }
@@ -202,5 +211,4 @@ class AdvancedEnquiryFormHandler {
 // ==================== INITIALIZE FORM HANDLER ====================
 document.addEventListener('DOMContentLoaded', () => {
     new AdvancedEnquiryFormHandler();
-    console.log('✓ Form handler initialized. API endpoint:', API_ENDPOINT);
 });
