@@ -311,6 +311,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
 .checkbox-label { display: flex !important; align-items: flex-start; gap: 10px; flex-wrap: wrap; font-weight: 400 !important; color: var(--text) !important; cursor: pointer; }
 .checkbox-label input { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--orange); flex-shrink: 0; }
 .checkbox-label .error-message { flex-basis: 100%; margin-left: 28px; }
+/* Spam trap: hidden from people, visible to bots */
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .form-message { padding: 14px 16px; border-radius: var(--radius-sm); margin-bottom: 16px; font-weight: 500; }
 .form-message-success { background: #E7F6EE; color: var(--success); border-left: 4px solid var(--success); }
 .form-message-error { background: #FBEAE8; color: var(--error); border-left: 4px solid var(--error); }

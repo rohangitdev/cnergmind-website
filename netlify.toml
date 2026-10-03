@@ -10,11 +10,11 @@
   # Directory containing functions
   functions = "netlify/functions"
 
-[env]
-  # Environment variable for SendGrid API Key
-  # Add this in Netlify dashboard: Site settings → Build & deploy → Environment
-  # Name: SENDGRID_API_KEY
-  # Value: (your SendGrid API key)
+# Environment variables (set in Netlify → Site configuration → Environment variables,
+# then trigger a redeploy so the email function picks them up):
+#   SENDGRID_API_KEY    required
+#   ENQUIRY_TO_EMAIL    optional, defaults to sales@cnergmind.com
+#   ENQUIRY_FROM_EMAIL  optional, defaults to noreply@cnergmind.com (must be verified in SendGrid)
 
 # Redirect rules
 [[redirects]]

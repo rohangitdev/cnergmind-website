@@ -121,7 +121,7 @@ class AdvancedEnquiryFormHandler {
 
         // Validate all fields
         if (!this.validateAllFields()) {
-            this.showMessage('Please fix the errors above', 'error');
+            this.showMessage('Please fix the highlighted fields above.', 'error');
             return;
         }
 
@@ -152,6 +152,7 @@ class AdvancedEnquiryFormHandler {
             area: document.getElementById('area').value,
             timeline: document.getElementById('timeline').value,
             message: document.getElementById('message').value,
+            website: (document.getElementById('website') || {}).value || '',
             timestamp: new Date().toLocaleString('en-IN')
         };
     }
