@@ -1,0 +1,23 @@
+{
+  "name": "cnerg-mind-website",
+  "version": "1.0.0",
+  "description": "CNERG MIND - Pre-Engineered Building (PEB) & Steel Structure Solutions",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo 'Build complete'"
+  },
+  "keywords": [
+    "PEB",
+    "Steel Structures",
+    "Pre-Engineered Buildings",
+    "Industrial Buildings",
+    "CNERG MIND"
+  ],
+  "author": "CNERG MIND STEEL STRUCTURE PVT. LTD.",
+  "license": "MIT",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0"
+  },
+  "devDependencies": {}
+}

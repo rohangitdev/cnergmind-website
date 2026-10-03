@@ -1,0 +1,32 @@
+# Netlify Configuration for CNERG Mind Website
+
+[build]
+  # Command to run before deployment
+  command = "npm install"
+
+  # Directory to deploy
+  publish = "."
+
+  # Directory containing functions
+  functions = "netlify/functions"
+
+[env]
+  # Environment variable for SendGrid API Key
+  # Add this in Netlify dashboard: Site settings → Build & deploy → Environment
+  # Name: SENDGRID_API_KEY
+  # Value: (your SendGrid API key)
+
+# Redirect rules
+[[redirects]]
+  from = "/api/send-email"
+  to = "/.netlify/functions/send-email"
+  status = 200
+
+# Headers for security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
