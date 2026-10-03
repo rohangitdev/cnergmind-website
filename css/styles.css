@@ -1199,3 +1199,8 @@ section {
     padding: 2px 6px;
     border-radius: 3px;
 }
+
+/* Hide social links until profiles created */
+.social-links {
+    display: none !important;
+}
